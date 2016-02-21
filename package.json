@@ -1,0 +1,15 @@
+{
+  "name": "cf-monitor",
+  "version": "0.0.1",
+  "description": "codefresh new relic wrapper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codefresh/cf-monitor.git"
+  },
+  "keywords": [
+    "cf-monitor"
+  ],
+  "dependencies": {
+    "newrelic": "1.24.1"
+  }
+}
