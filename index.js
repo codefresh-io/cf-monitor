@@ -4,6 +4,10 @@ var fs      = require('fs'),
 var newrelicFile = path.join(process.cwd(), 'newrelic.js');
 
 if (fs.existsSync(newrelicFile)) {
+
+    var newrelicInfo = require(newrelicFile);
+    console.log('Using newrelic: ' + JSON.stringify(newrelicInfo));
+
     var nr = require('newrelic');
 
     var config;
@@ -24,8 +28,14 @@ if (fs.existsSync(newrelicFile)) {
         },
         createWebTransaction: function(url, handle) {
             return nr.createWebTransaction(url, handle);
+        },
+        addCustomParameter: function(name, value){
+            nr.addCustomParameter(name, value);
         }
     };
+} else {
+    console.log('No newrelic config found here: ' + newrelicFile);
+
 }
 
 module.exports = {
@@ -35,7 +45,8 @@ module.exports = {
     endTransaction: function() {},
     createWebTransaction: function(url, handle) {
         return handle;
-    }
+    },
+    addCustomParameter: function(name, value) {}
 };
 
 
