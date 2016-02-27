@@ -29,6 +29,9 @@ if (fs.existsSync(newrelicFile)) {
         createWebTransaction: function(url, handle) {
             return nr.createWebTransaction(url, handle);
         },
+        createBackgroundTransaction: function(name, group, handle) {
+            return nr.createBackgroundTransaction(name, group, handle);
+        },
         addCustomParameter: function(name, value){
             nr.addCustomParameter(name, value);
         }
@@ -44,6 +47,9 @@ module.exports = {
     noticeError: function() {},
     endTransaction: function() {},
     createWebTransaction: function(url, handle) {
+        return handle;
+    },
+    createBackgroundTransaction: function(name, group, handle) {
         return handle;
     },
     addCustomParameter: function(name, value) {}
