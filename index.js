@@ -3,7 +3,7 @@ var fs      = require('fs'),
 
 var newrelicFile = path.join(process.cwd(), 'newrelic.js');
 
-if (fs.existsSync(newrelicFile)) {
+if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
 
     var newrelicInfo = require(newrelicFile);
     console.log('Using newrelic: ' + JSON.stringify(newrelicInfo));
