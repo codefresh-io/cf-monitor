@@ -34,6 +34,9 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
         },
         addCustomParameter: function(name, value){
             nr.addCustomParameter(name, value);
+        },
+        recordCustomEvent: function(name, value){
+            nr.recordCustomEvent(name, value);
         }
     };
 } else {
@@ -52,7 +55,8 @@ module.exports = {
     createBackgroundTransaction: function(name, group, handle) {
         return handle;
     },
-    addCustomParameter: function(name, value) {}
+    addCustomParameter: function(name, value) {},
+    recordCustomEvent: function(name, value) {}
 };
 
 
