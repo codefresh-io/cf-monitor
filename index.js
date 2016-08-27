@@ -7,14 +7,8 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
 
     var newrelicInfo = require(newrelicFile);
     console.log('Using newrelic: ' + JSON.stringify(newrelicInfo));
-
-    //reference newrelic lib/instrumentation/core/blobals
-    //new relic defines a handler on _fatalException which causes that whenever a domain throws an error it first goes through their handler
-    //in their handler they are reporting the error. this is bad because if we catch the error in the domain error handler and report it, we will get 2 reports to new relic
-    var fatalException = process._fatalException;
-    process._fatalException = undefined;
+    
     var nr = require('newrelic');
-    process._fatalException = fatalException;
 
     var config;
 
