@@ -20,8 +20,8 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
         recordMetric: function(ns, val) {
             nr.recordMetric(ns, val);
         },
-        noticeError: function(err) {
-            nr.noticeError(err);
+        noticeError: function(err, customParameters) {
+            nr.noticeError(err, customParameters);
         },
         endTransaction: function() {
             nr.endTransaction();
