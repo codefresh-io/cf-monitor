@@ -9,6 +9,7 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
     console.log('Using newrelic: ' + JSON.stringify(newrelicInfo));
     
     var nr = require('newrelic');
+    var trace = require('@risingstack/trace');
 
     var config;
 
