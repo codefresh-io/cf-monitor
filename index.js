@@ -7,7 +7,7 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
 
     var newrelicInfo = require(newrelicFile);
     console.log('Using newrelic: ' + JSON.stringify(newrelicInfo));
-    
+
     var nr = require('newrelic');
 
     var config;
@@ -39,7 +39,7 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
             nr.recordCustomEvent(name, value);
         }
     };
-} else {
+} else if (!process.env.NO_EXT_MONITOR) {
     console.log('No newrelic config found here: ' + newrelicFile);
 
 }
