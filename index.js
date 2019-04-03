@@ -27,13 +27,13 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
             nr.endTransaction();
         },
         createWebTransaction: function(url, handle) {
-            return nr.createWebTransaction(url, handle);
+            return nr.startWebTransaction(url, handle);
         },
         createBackgroundTransaction: function(name, group, handle) {
-            return nr.createBackgroundTransaction(name, group, handle);
+            return nr.startBackgroundTransaction(name, group, handle);
         },
         addCustomParameter: function(name, value){
-            nr.addCustomParameter(name, value);
+            nr.addCustomAttribute(name, value);
         },
         recordCustomEvent: function(name, value){
             nr.recordCustomEvent(name, value);
