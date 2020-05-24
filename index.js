@@ -50,10 +50,10 @@ module.exports = {
     noticeError: function() {},
     endTransaction: function() {},
     createWebTransaction: function(url, handle) {
-        return handle;
+        return handle();
     },
     createBackgroundTransaction: function(name, group, handle) {
-        return handle;
+        return handle();
     },
     addCustomParameter: function(name, value) {},
     recordCustomEvent: function(name, value) {}
