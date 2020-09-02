@@ -3,37 +3,7 @@ var fs      = require('fs'),
 
 var newrelicFile = path.join(process.cwd(), 'newrelic.js');
 
-if (process.env.LIGHTSTEP_ACCESS_TOKEN) {
-    var newrelicInfo = require(newrelicFile);
-
-    const { lightstep } = require("lightstep-opentelemetry-launcher-node");
-
-    const serviceName = newrelicInfo.config.app_name[0].split('[')[0];
-    console.log(`Using lightstep: ${serviceName}`);
-
-    const sdk = lightstep.configureOpenTelemetry({
-        accessToken: process.env.LIGHTSTEP_ACCESS_TOKEN,
-        serviceName: serviceName,
-    });
-
-    sdk.start();
-
-    return module.exports = {
-        init: function() {},
-        recordMetric: function() {},
-        noticeError: function() {},
-        endTransaction: function() {},
-        createWebTransaction: function(url, handle) {
-            return handle();
-        },
-        createBackgroundTransaction: function(name, group, handle) {
-            return handle();
-        },
-        addCustomParameter: function(name, value) {},
-        recordCustomEvent: function(name, value) {}
-    };
-
-} else if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
+if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
 
     var newrelicInfo = require(newrelicFile);
     console.log('Using newrelic: ' + JSON.stringify(newrelicInfo));
