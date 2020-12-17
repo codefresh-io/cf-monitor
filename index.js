@@ -37,6 +37,9 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
         },
         recordCustomEvent: function(name, value){
             nr.recordCustomEvent(name, value);
+        },
+        getBrowserTimingHeader: function(){
+            nr.getBrowserTimingHeader();
         }
     };
 } else if (!process.env.NO_EXT_MONITOR) {
