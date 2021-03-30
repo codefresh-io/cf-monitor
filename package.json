@@ -10,6 +10,6 @@
     "cf-monitor"
   ],
   "dependencies": {
-    "newrelic": "5.10.0"
+    "newrelic": "5.13.1"
   }
 }
