@@ -32,8 +32,8 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
         createBackgroundTransaction: function(name, group, handle) {
             return nr.startBackgroundTransaction(name, group, handle);
         },
-        startSegment: function(name, record, handler) {
-            return nr.startSegment(name, record, handler)
+        startSegment: function(name, record, handler, callback) {
+            return nr.startSegment(name, record, handler, callback)
         },
         addCustomParameter: function(name, value){
             nr.addCustomAttribute(name, value);
