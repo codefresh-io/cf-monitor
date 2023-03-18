@@ -293,10 +293,10 @@ nan@^2.15.0:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.17.0.tgz#c0150a2368a182f033e9aa5195ec76ea41a199cb"
   integrity sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==
 
-newrelic@8.16.0:
-  version "8.16.0"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-8.16.0.tgz#57a230feb8d5430bec5c4d872b182c5219e062e1"
-  integrity sha512-pyjMghcmMwSIY6pc/8lLcK6IarBQPkscKyWde1d/J1kbMOh7iyd6wm2SUkhTqqLNU0YvgD/sSaysYVKIoku59A==
+newrelic@8.17.1:
+  version "8.17.1"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-8.17.1.tgz#0cea28c6eaab302815d10d5e57bd15e4016f1a50"
+  integrity sha512-7KJQaTTszlX2DaHRFXgvhG1Ebt0sR57ix5PXw/06dALP2G2f+5B9VBI2QenYuiwwebcw9KcxI07+yQRjF46fWg==
   dependencies:
     "@grpc/grpc-js" "^1.5.5"
     "@grpc/proto-loader" "^0.6.13"
