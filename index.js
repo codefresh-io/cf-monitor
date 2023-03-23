@@ -23,6 +23,9 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
         noticeError: function(err, customParameters) {
             nr.noticeError(err, customParameters);
         },
+        getTransaction: function() {
+          return nr.getTransaction();
+        },
         endTransaction: function() {
             nr.endTransaction();
         },
@@ -62,7 +65,8 @@ module.exports = {
         return handler
     },
     addCustomParameter: function(name, value) {},
-    recordCustomEvent: function(name, value) {}
+    recordCustomEvent: function(name, value) {},
+    getTransaction: function() {}
 };
 
 
