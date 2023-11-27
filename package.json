@@ -1,6 +1,6 @@
 {
   "name": "@codefresh-io/cf-monitor",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "codefresh new relic wrapper lib ",
   "repository": {
     "type": "git",
