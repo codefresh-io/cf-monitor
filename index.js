@@ -40,7 +40,10 @@ if (fs.existsSync(newrelicFile) && !process.env.NO_EXT_MONITOR) {
         },
         recordCustomEvent: function(name, value){
             nr.recordCustomEvent(name, value);
-        }
+        },
+        startSegment: function(name, record, handler, callback) {
+            return nr.startSegment(name, record, handler, callback);
+        },
     };
 } else if (!process.env.NO_EXT_MONITOR) {
     console.log('No newrelic config found here: ' + newrelicFile);
@@ -61,6 +64,7 @@ module.exports = {
     addCustomParameter: function(name, value) {},
     recordCustomEvent: function(name, value) {},
     getTransaction: function() {},
+    startSegment: function(name, record, handler, callback) {
+        return handler();
+    },
 };
-
-
